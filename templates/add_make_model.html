@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Make and Models</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Add New Make and Models</h1>
+    <form method="POST">
+      <label for="make">Make:</label>
+      <input type="text" id="make" name="make" required />
+
+      <div id="models-container">
+        <label for="models">Models:</label>
+        <input type="text" name="models" required />
+      </div>
+
+      <button type="button" id="add-model">Add Another Model</button>
+
+      <input type="submit" value="Add Make and Models" />
+    </form>
+    <a href="{{ url_for('index') }}">Back to Inventory</a>
+
+    <script>
+      document
+        .getElementById("add-model")
+        .addEventListener("click", function () {
+          var container = document.getElementById("models-container");
+          var input = document.createElement("input");
+          input.type = "text";
+          input.name = "models";
+          input.required = true;
+          container.appendChild(input);
+        });
+    </script>
+  </body>
+</html>

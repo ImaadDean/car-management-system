@@ -1,0 +1,242 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+label,
+input {
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+}
+
+a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #1a73e8;
+}
+
+#models-container {
+  margin-bottom: 10px;
+}
+
+#models-container input {
+  margin-bottom: 5px;
+}
+
+#add-model {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#add-model:hover {
+  background-color: #45a049;
+}
+
+h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+#searchInput,
+#searchSoldInput {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#searchInput:focus,
+#searchSoldInput:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+#soldCarTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#soldCarTable th,
+#soldCarTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#soldCarTable th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+#soldCarTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#soldCarTable tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* ... (keep your existing styles) ... */
+
+.flashes {
+  list-style-type: none;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.flashes li {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+td form {
+  display: inline;
+}
+
+td button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 2px 2px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+td button:hover {
+  background-color: #d32f2f;
+}
+
+/* ... (keep your existing styles) ... */
+
+h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+#searchInput,
+#searchSoldInput {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#searchInput:focus,
+#searchSoldInput:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+#soldCarTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#soldCarTable th,
+#soldCarTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#soldCarTable th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+#soldCarTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#soldCarTable tr:hover {
+  background-color: #f5f5f5;
+}
+/* ... (keep your existing styles) ... */
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+form input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+form input[type="submit"]:hover {
+  background-color: #45a049;
+}

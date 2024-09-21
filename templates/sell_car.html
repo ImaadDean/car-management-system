@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sell Car</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Sell Car</h1>
+    <h2>{{ car.make }} {{ car.model }} ({{ car.number_plate }})</h2>
+    <form method="POST">
+      <label for="customer_name">Customer Name:</label>
+      <input type="text" id="customer_name" name="customer_name" required />
+
+      <label for="customer_email">Customer Email:</label>
+      <input type="email" id="customer_email" name="customer_email" required />
+
+      <label for="customer_phone">Customer Phone:</label>
+      <input type="tel" id="customer_phone" name="customer_phone" required />
+
+      <label for="sale_price">Sale Price:</label>
+      <input
+        type="number"
+        id="sale_price"
+        name="sale_price"
+        step="0.01"
+        value="{{ car.price }}"
+        required
+      />
+
+      <input type="submit" value="Complete Sale" />
+    </form>
+    <a href="{{ url_for('index') }}">Cancel</a>
+  </body>
+</html>

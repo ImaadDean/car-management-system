@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Car</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Edit Car</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <form method="POST">
+        <label for="make">Make:</label>
+        <select id="make" name="make" required>
+            <option value="">Select Make</option>
+            {% for make in makes %}
+            <option value="{{ make }}" {% if make == car.make %}selected{% endif %}>{{ make }}</option>
+            {% endfor %}
+        </select>
+        
+        <label for="model">Model:</label>
+        <select id="model" name="model" required>
+            <option value="">Select Model</option>
+            <option value="{{ car.model }}" selected>{{ car.model }}</option>
+        </select>
+        
+        <label for="year">Year:</label>
+        <select id="year" name="year" required>
+            {% for year in years|reverse %}
+            <option value="{{ year }}" {% if year|string == car.year %}selected{% endif %}>{{ year }}</option>
+            {% endfor %}
+        </select>
+        
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" step="0.01" value="{{ car.price }}" required>
+        
+        <label for="number_plate">Number Plate:</label>
+        <input type="text" id="number_plate" name="number_plate" value="{{ car.number_plate }}" required pattern="[A-Za-z]{3}\d{3}[A-Za-z]" title="Please enter 3 letters, 3 numbers, and 1 letter (e.g., ABC123D)" maxlength="7">
+        
+        <input type="submit" value="Update Car">
+    </form>
+    <a href="{{ url_for('index') }}">Back to Inventory</a>
+
+    <script>
+        $(document).ready(function() {
+            $('#make').change(function() {
+                var make = $(this).val();
+                $.getJSON('/get_models/' + make, function(data) {
+                    var model_select = $('#model');
+                    model_select.empty();
+                    model_select.append('<option value="">Select Model</option>');
+                    $.each(data.models, function(index, value) {
+                        model_select.append('<option value="' + value + '">' + value + '</option>');
+                    });
+                });
+            });
+
+            // Trigger change event to load models for the selected make
+            $('#make').trigger('change');
+        });
+    </script>
+</body>
+</html>
